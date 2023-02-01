@@ -2,7 +2,7 @@
 
 Docker PKGBUILD Environment for Jimni Packages<br>
 user account :<br>
-user : `user `<br>password` password`
+user : `user`<br>password`password`
 ### jimni.sh
 ```
 bash jimni.sh <download/autobuild>
