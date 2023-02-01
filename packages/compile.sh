@@ -1,0 +1,1 @@
+cd neofetch && wget https://github.com/Jimnilinux/neofetch/releases/latest/download/PKGBUILD -O PKGBUILD && makepkg -si --noconfirm
