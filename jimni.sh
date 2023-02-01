@@ -5,7 +5,9 @@
 echo "----------------------------------------------------------------------"
 echo "Jimnilinux/docker-pkgbuilder : docker container for building packages"
 echo "----------------------------------------------------------------------"
-# if help is called
+if [ ! -d "build" ]; then
+    mkdir build
+fi
 if [ "$1" == "help" ]; then
     echo "Usage: ./jimni.sh [action] [package name]"
     echo "Example: ./jimni.sh build neofetch"
@@ -13,6 +15,7 @@ if [ "$1" == "help" ]; then
     echo "Available actions:"
     echo "build : build a package"
     echo "run : run container"
+    echo "download : download PKGBUILD files for all packages"
     exit 0
 fi
 if [ "$1" == "run" ]; then
@@ -31,9 +34,19 @@ fi
 if [ "$1" == "autobuild" ]; then
     echo "Building all packages"
     sudo docker build -t jimni . --build-arg autobuild=true
-    docker run -it --rm jimni bash -c 'cd /tmp/ && bash ./autobuild.sh && bash'
+    docker run -v $PWD/build:/tmp/build -it --rm jimni bash -c 'cd /tmp/packages && sudo -u user bash ./compile.sh' 
+    #docker rm -f jimni
     exit 0
 fi
+if [ "$1" == "download"  ]; then
+    echo "Downloading PKGBUILD files for all packages"
+    # download PKGBUILD for neofetch from github latest release (jimnilinux/neofetch)
+    bash ./download.sh
+    exit 0
+fi
+
+    
+
 
     
 
