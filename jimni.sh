@@ -35,7 +35,7 @@ if [ "$1" == "autobuild" ]; then
     echo "Building all packages"
     sudo docker build -t jimni . --build-arg autobuild=true
     chmod +xrw build && chmod +xrw packages/*
-    docker run -v $PWD/build:/tmp/build -it --rm jimni bash -c 'cd /tmp/packages && sudo -u user bash ./compile.sh' 
+    docker run -v $PWD/build:/tmp/build -it --rm jimni bash -c 'sudo chmod 777 /tmp/packages/neofetch && sudo chmod 777 /tmp/build && cd /tmp/packages && sudo -u user bash ./compile.sh' 
     #docker rm -f jimni
     exit 0
 fi
