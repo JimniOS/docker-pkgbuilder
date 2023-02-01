@@ -6,7 +6,6 @@ FROM archlinux:latest
 RUN /bin/bash -c 'pacman -Sy'
 COPY dotfiles/.bashrc /root/.bashrc
 COPY packages/ /tmp/packages/
-COPY autobuild.sh /tmp/autobuild.sh
 RUN /bin/bash -c 'source $HOME/.bashrc && \
 pacman -S bash neofetch base-devel git wget sudo nano --noconfirm'
 RUN /bin/bash -c 'useradd -m -G wheel user'
