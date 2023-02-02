@@ -11,6 +11,4 @@ pacman -S bash neofetch base-devel git wget sudo nano --noconfirm'
 RUN /bin/bash -c 'useradd -m -G wheel user'
 RUN /bin/bash -c 'echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers'
 RUN /bin/bash -c 'echo "user:password" | chpasswd'
-ARG autobuild
-RUN if [[ -z "$autobuild" ]] ; then RUN /bin/bash -c "sudo -u user bash /tmp/autobuild.sh" ; else echo not auto building ; fi
 # start package compilation
