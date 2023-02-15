@@ -1,4 +1,4 @@
-# Jimnilinux build environment
+# JimniOS build environment
 # Developer : wiz64
 # sudo docker build -t jimni --no-cache=true .
 # docker run -it --rm jimni bash -c "bash"

@@ -11,6 +11,6 @@ for package in $(ls -d */); do
     fi
     cd $current_dir
 done
-#cd neofetch && wget https://github.com/Jimnilinux/neofetch/releases/latest/download/PKGBUILD -O PKGBUILD && makepkg -si --noconfirm
+#cd neofetch && wget https://github.com/JimniOS/neofetch/releases/latest/download/PKGBUILD -O PKGBUILD && makepkg -si --noconfirm
 #cp *.pkg.tar.zst /tmp/build
 #cd $current_dir;

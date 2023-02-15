@@ -3,7 +3,7 @@
 # argv[1] is the action name (build, run, clean) etc
 # argv[2] is the package name
 echo "----------------------------------------------------------------------"
-echo "Jimnilinux/docker-pkgbuilder : docker container for building packages"
+echo "JimniOS/docker-pkgbuilder : docker container for building packages"
 echo "----------------------------------------------------------------------"
 if [ ! -d "build" ]; then
     mkdir build
@@ -41,7 +41,7 @@ if [ "$1" == "autobuild" ]; then
 fi
 if [ "$1" == "download"  ]; then
     echo "Downloading PKGBUILD files for all packages"
-    # download PKGBUILD for neofetch from github latest release (jimnilinux/neofetch)
+    # download PKGBUILD for neofetch from github latest release (jimnios/neofetch)
     chmod +xrw build && chmod +xrw packages/*
     bash ./download.sh
     exit 0
